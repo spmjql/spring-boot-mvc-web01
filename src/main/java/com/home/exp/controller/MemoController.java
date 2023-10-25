@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.home.exp.controller.service.MemoService;
-import com.home.exp.controller.service.process.MemoServiceProcess;
 
 @Controller
 public class MemoController {
@@ -20,7 +19,8 @@ public class MemoController {
 	}
 	
 	@PostMapping ("/memo")
-	public String memoSave() {
+	public String memoSave(String content) {
+		service.memoS(content);
 		return "common/memo";
 	}
 }
